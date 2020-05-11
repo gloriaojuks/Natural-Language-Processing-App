@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>NLP News App</title>
+    </head>
+
+    <body>
+        <header class="the_header">
+            <div class="brand">
+                <h3>News <span>NLP</span> </h3>
+            </div>
+        </header>
+        <main>
+            <section>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <textarea id="text" name="content" placeholder="enter some text or url" rows="6" cols="50"></textarea>
+                    <input type="submit" value="Submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                </form>
+            </section>
+            <section>
+                <strong>See output below:</strong>
+                <div class="signal">
+                    <div class="spin"></div>
+                    <span class="error"></span>
+               </div>
+                <div id="output"></div>
+            </section>
+        </main>
+
+        <footer class="the_footer"> 
+            <p>Built with 💗 for Udacity Frontend Course</p>
+        </footer>
+        <!-- <script>
+            // check if service worker is supported in browser
+            if ('serviceWorker' in navigator) {
+                // register a service worker
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script> -->
+    </body>
+</html>

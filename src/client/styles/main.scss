@@ -1,0 +1,148 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap);
+
+$light: #cf8618;
+$primary: #262635;
+$main: #a7275c;
+
+body {
+	
+	box-sizing: border-box;
+	font-family: Montserrat, sans-serif;
+	background: rgb(230, 215, 215);
+	margin: 0;
+	padding: 0;
+}
+
+.the_header {
+	width: 100%;
+	text-align: center;
+	height: 60px;
+	box-shadow: 0px 3px 50px #0000001F;
+	background-color: $light;
+	margin-bottom: 1rem;
+	color: #fff;
+	.brand {
+		height: 60px;
+		margin-left: 2rem;
+		h3 {
+			margin-block-start: 0;
+			margin-block-end: 0;
+			line-height: 60px;
+			font-size: 2rem;
+		}
+		span {
+			color: #9ac601;
+			font-family: Montserrat, sans-serif;
+		}
+	}
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	width: 100%;
+	height: calc(100% - 160px);
+	justify-content: center;
+	align-items: center;
+	section {
+		width: 50vw;
+		.signal{
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			.spin {
+				width: 2rem;
+				height: 2rem;
+				border: 3px solid rgba(0, 0, 0, .25);
+				border-top-color: rgba(255, 255, 255, .5);
+				border-radius: 50%;
+				animation: rotation .7s ease infinite;
+				margin-bottom: 1rem;
+				display: none;
+				&.show-spinner {
+					display: block;
+				}
+			}
+			span {
+				color: red;
+				display: none;
+				&.show-error {
+					display: block;
+				}
+			}
+		}
+		form {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			textarea {
+				margin-bottom: 0.5rem;
+				width: 100%;
+				max-width: 400px;
+				border: 3px solid $primary;
+				font-size: 1.2rem;
+				border-radius: 20px;
+				padding: 8px;
+				justify-content: center;
+			}
+			input[type="submit"] {
+				height: auto;
+				width: 100%;
+				max-width: 100px;
+				border-radius: 5px;
+				background-color: $main;
+				color: #fff;
+				padding: 10px;
+				font-size: 1.4rem;
+				font-weight: bold;
+				cursor: pointer;
+				margin-bottom: 1rem;
+			}
+		}
+		#output {
+			border: 3px solid #ccc;
+			min-height: 200px;
+			border-radius: 20px;
+			width: 100%;
+			padding: 0 1rem;
+			color: #ccc;
+			line-height: 20px;
+			background-color: #751b57;
+			font-size: 1.3rem;
+			display: none;
+			span {
+				color: $primary;
+			}
+			&.show-result {
+				display: block;
+			}
+		}
+	}
+}
+
+.the_footer {
+	width: 100%;
+	height: 80px;
+	box-shadow: 0px 3px 50px #0000001F;
+	background: #ccc;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin-top: 2.5rem;
+}
+
+p {
+	font-size: 1.2rem;
+}
+
+@keyframes rotation {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
